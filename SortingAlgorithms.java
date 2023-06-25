@@ -179,4 +179,50 @@ public class SortingAlgorithms {
      * records
      */
 
+    /**
+     * This function sorts an array of records using the quick sort algorithm.
+     * 
+     * @param arr The array containing the records to be sorted.
+     * @param p   The starting index of the subarray to be sorted.
+     * @param r   The ending index of the subarray to be sorted.
+     */
+    public void quickSort(Record[] arr, int p, int r) {
+        if (p < r) {
+            // Partition the array into two subarrays
+            int q = partition(arr, p, r);
+            // Sort the left subarray
+            quickSort(arr, p, q - 1);
+            // Sort the right subarray
+            quickSort(arr, q + 1, r);
+        }
+
+    }
+
+    /**
+     * This function partitions the array into two subarrays.
+     * 
+     * @param arr The array containing the records to be sorted.
+     * @param p   The starting index of the subarray to be sorted.
+     * @param r   The ending index of the subarray to be sorted.
+     * @return The index of the pivot element.
+     */
+
+    private int partition(Record[] arr, int p, int r) {
+        // Assign the last element as the pivot
+        int pivot = arr[r].getIdNumber();
+        // Assign the index of the smaller element
+        int i = p - 1;
+
+        // Loop through the array and swap elements if they are smaller than the pivot
+        for (int j = p; j < r; j++) {
+            if (arr[j].getIdNumber() <= pivot) {
+                i++;
+                swap(arr, i, j);
+            }
+        }
+        // Swap the pivot with the element at index i + 1
+        swap(arr, i + 1, r);
+        return i + 1; // Return the index of the pivot
+    }
+
 }
