@@ -9,12 +9,11 @@ public class Main {
         Record records[] = fileReader.readFile(
                 "C:\\Users\\Paul Ivan\\Desktop\\Codes\\Java\\starter_code_java\\starter_code_java\\data\\random100.txt");
 
+        // sort.insertionSort(records, records.length);
+        // sort.selectionSort(records, records.length);
         sort.mergeSort(records, 0, records.length - 1);
         for (Record record : records) {
             System.out.println(record.getIdNumber() + " " + record.getName());
         }
-
-        // sort.insertionSort(records, records.length);s
-        // sort.selectionSort(records, records.length);
     }
 }
