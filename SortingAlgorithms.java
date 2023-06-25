@@ -214,8 +214,8 @@ public class SortingAlgorithms {
         int i = p - 1;
 
         // Loop through the array and swap elements if they are smaller than the pivot
-        for (int j = p; j < r; j++) {
-            if (arr[j].getIdNumber() <= pivot) {
+        for (int j = p; j <= r; j++) {
+            if (arr[j].getIdNumber() < pivot) {
                 i++;
                 swap(arr, i, j);
             }
