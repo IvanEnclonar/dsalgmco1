@@ -78,13 +78,13 @@ public class SortingAlgorithms {
     public void selectionSort(Record[] arr, int n) {
         // TODO: Implement this sorting algorithm here.
 
-        for (int i = 0; i < arr.length; i++) {
+        for (int i = 0; i < n; i++) {
             // Variable to store the index of the smallest element
             int index = i;
             // Variable to store the smallest element
             int minVal = arr[i].getIdNumber();
             // Loop through the array to find the smallest element
-            for (int j = i + 1; j < arr.length; j++) {
+            for (int j = i + 1; j < n; j++) {
                 // If the element at index j is smaller than the smallest element, then update
                 // the variables
                 if (arr[j].getIdNumber() < minVal) {
